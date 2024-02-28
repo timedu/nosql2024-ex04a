@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  app:
+    image: nosql-2024:ex04a
+    build:
+      dockerfile: ./Dockerfile
+    command: python -B main.py
+    volumes:
+      - ./app:/home/app
+    environment:
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+    profiles:
+      - do-not-start-by-default
+
+  redis:
+    image: redis:7.2
+    ports: 
+    - 6379:6379

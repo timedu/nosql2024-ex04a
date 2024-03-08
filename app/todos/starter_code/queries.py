@@ -76,13 +76,7 @@ def list_2(r):
 def list_3(r):
     pass
 
-def list_3b(r):    
-    pass
-
 def list_4(r):
-    pass
-
-def list_4b(r):
     pass
 
 def list_5(r):
